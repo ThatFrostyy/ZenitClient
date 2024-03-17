@@ -30,7 +30,7 @@ namespace DiscordBot.Commands
 
                 await ctx.Message.CreateReactionAsync(DiscordEmoji.FromUnicode("\U00002611"));
                 await channel.ConnectAsync();
-                await ctx.RespondAsync($"Successfully connected to the voice channel: {channel.Name}.");
+                await ctx.RespondAsync($"Successfully connected to the voice channel: {channel.Name}");
             }
             catch (Exception ex)
             {

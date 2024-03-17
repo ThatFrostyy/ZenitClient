@@ -25,8 +25,6 @@ namespace DiscordBot.Commands
             }
 
             var response = await ctx.RespondAsync($"Successfully deleted {num} messages in {ctx.Channel.Name}.");
-            Thread.Sleep(2000);
-            await ctx.Channel.DeleteMessageAsync(response);
         }
 
         [Command("ban")]
@@ -43,6 +41,7 @@ namespace DiscordBot.Commands
                 await ctx.RespondAsync("I can ban that member, he is above me mate.");
                 return;
             }
+            await ctx.Message.CreateReactionAsync(DiscordEmoji.FromUnicode("\U00002611"));
 
             await member.BanAsync(7, reason);
             await ctx.RespondAsync($"{member.DisplayName} was banned for the reason: {reason}");
