@@ -11,7 +11,7 @@ Welcome to the ZenitClient! This project is designed to provide a seamless and u
 - **User-Friendly**: The bot is designed with a focus on user-friendliness. Even if you're not familiar with coding or Discord bots, you should find it easy to get started.
 ## Getting Started
 
-To get started, simply clone this repository, fill out the configuration options with your bot's details, and run the bot. If you need any help or have any questions, feel free to open an issue or submit a pull request.
+To get started, check out the [wiki](https://github.com/ThatFrostyy/ZenitClient/wiki)!
 ## Screenshots
 | | |
 |:-------------------------:|:-------------------------:|
