@@ -1,0 +1,1 @@
+Once you built the bot add ffmpeg.exe to this folder, and then copy the folder and paste it into the build directory.
