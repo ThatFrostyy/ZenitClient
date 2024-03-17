@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Forms;
-
 namespace DiscordBot
 {
     public partial class Form2 : Form

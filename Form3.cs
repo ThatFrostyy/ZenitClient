@@ -2,7 +2,6 @@
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-
 namespace DiscordBot
 {
     public partial class Form3 : Form

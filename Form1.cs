@@ -5,7 +5,6 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
 namespace DiscordBot
 {
     public partial class Form1 : Form

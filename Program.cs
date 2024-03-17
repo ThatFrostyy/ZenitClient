@@ -65,6 +65,7 @@ namespace DiscordBot
                 Commands = Client.UseCommandsNext(commandsConfig);
                 Commands.RegisterCommands<Music>();
                 Commands.RegisterCommands<Tools>();
+                Commands.RegisterCommands<General>();
 
                 Console.WriteLine("BOT CLIENT = CONNECT");
 

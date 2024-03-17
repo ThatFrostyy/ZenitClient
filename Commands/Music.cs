@@ -8,11 +8,13 @@ using DSharpPlus.CommandsNext;
 using DSharpPlus.CommandsNext.Attributes;
 using DSharpPlus.Entities;
 using DSharpPlus.VoiceNext;
-
 namespace DiscordBot.Commands
 {
     public class Music : BaseCommandModule
     {
+        //
+        // For music to work you MUST add ffmpeg to the ffmpeg folder.
+        //
         private Process ffmpegProcess;
 
         [Command("join")]
