@@ -69,6 +69,7 @@ namespace DiscordBot
         private void optionsToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             _form3.Show();
+            _form3.FillControls();
         }
 
         public void SetDark()

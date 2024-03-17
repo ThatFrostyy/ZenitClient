@@ -10,7 +10,6 @@ namespace DiscordBot
         public Form3()
         {
             InitializeComponent();
-            FillControls();
         }
 
         private void saveButton_Click(object sender, EventArgs e)
@@ -44,7 +43,7 @@ namespace DiscordBot
             }
         }
 
-        private void FillControls()
+        public void FillControls()
         {
             try
             {

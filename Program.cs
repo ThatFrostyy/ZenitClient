@@ -7,8 +7,6 @@ using DSharpPlus;
 using DSharpPlus.CommandsNext;
 using DSharpPlus.VoiceNext;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-
 namespace DiscordBot
 {
     internal static class Program
