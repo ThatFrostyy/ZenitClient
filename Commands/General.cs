@@ -2,7 +2,6 @@
 using DSharpPlus.CommandsNext.Attributes;
 using System.Threading.Tasks;
 using DSharpPlus.Entities;
-
 namespace DiscordBot.Commands
 {
     public class General: BaseCommandModule
@@ -25,7 +24,8 @@ namespace DiscordBot.Commands
                                      "!join [channel] - Joins a voice channel.\n" +
                                      "!play - Plays the radio URL that was specified in the bot configuration.\n" +
                                      "!leave - Leaves a voice channel.\n\n" +
-                                     "!clear [number] - Deletes a specified number of messages from the chat."));
+                                     "!clear [number] - Deletes a specified number of messages from the chat.\n" +
+                                     "!ban [user] [reason] - Bans a specified member."));
 
             await ctx.RespondAsync(embed);
         }

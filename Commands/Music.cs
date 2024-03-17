@@ -18,11 +18,10 @@ namespace DiscordBot.Commands
         private Process ffmpegProcess;
 
         [Command("join")]
-        public async Task Join(CommandContext ctx, ulong channelId)
+        public async Task Join(CommandContext ctx, DiscordChannel channel)
         {
             try
             {
-                var channel = ctx.Guild.GetChannel(channelId);
                 if (channel == null || channel.Type != ChannelType.Voice)
                 {
                     await ctx.RespondAsync("That's an invalid channel mate.");
@@ -50,7 +49,7 @@ namespace DiscordBot.Commands
 
                 if (connection == null)
                 {
-                    await ctx.RespondAsync("You must add me to a voice channel first mate 🤦‍♂️");
+                    await ctx.RespondAsync("You must add me to a voice channel first mate.");
                     return;
                 }
                 await ctx.Message.CreateReactionAsync(DiscordEmoji.FromUnicode("\U00002611"));
@@ -78,7 +77,7 @@ namespace DiscordBot.Commands
 
                 if (connection == null)
                 {
-                    await ctx.RespondAsync("I am not in a voice channel mate 🤦‍♂️");
+                    await ctx.RespondAsync("I am not in a voice channel mate.");
                     return;
                 }
 

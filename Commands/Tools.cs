@@ -7,7 +7,7 @@ namespace DiscordBot.Commands
 {
     public class Tools: BaseCommandModule
     {
-        [Command("Clear")]
+        [Command("clear")]
         public async Task Clear(CommandContext ctx, int num)
         {
             if (num > 100)
@@ -27,6 +27,25 @@ namespace DiscordBot.Commands
             var response = await ctx.RespondAsync($"Successfully deleted {num} messages in {ctx.Channel.Name}.");
             Thread.Sleep(2000);
             await ctx.Channel.DeleteMessageAsync(response);
+        }
+
+        [Command("ban")]
+        public async Task Ban(CommandContext ctx, DiscordMember member, [RemainingText] string reason = null)
+        {
+            if (member == null)
+            {
+                await ctx.RespondAsync("You need to mention a member to ban mate.");
+                return;
+            }
+
+            if (member.Hierarchy > ctx.Guild.CurrentMember.Hierarchy)
+            {
+                await ctx.RespondAsync("I can ban that member, he is above me mate.");
+                return;
+            }
+
+            await member.BanAsync(7, reason);
+            await ctx.RespondAsync($"{member.DisplayName} was banned for the reason: {reason}");
         }
     }
 }
