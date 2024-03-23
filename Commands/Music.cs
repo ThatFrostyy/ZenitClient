@@ -98,7 +98,7 @@ namespace DiscordBot.Commands
         {
             try
             {
-                if (DiscordBot.Bot.RadioUrl == string.Empty)
+                if (DiscordBot.Settings.RadioUrl == string.Empty)
                 {
                     MessageBox.Show("You must enter a radio url first! (Client -> Options -> Radio URL)", "Invalid URL", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine($"COMMAND ERROR: You must enter a radio url first! (Client -> Options -> Radio URL)");
@@ -109,7 +109,7 @@ namespace DiscordBot.Commands
                 ffmpegProcess = Process.Start(new ProcessStartInfo
                 {
                     FileName = "./ffmpeg/ffmpeg",
-                    Arguments = $@"-i ""{DiscordBot.Bot.RadioUrl}"" -ac 2 -f s16le -ar 48000 pipe:1",
+                    Arguments = $@"-i ""{DiscordBot.Settings.RadioUrl}"" -ac 2 -f s16le -ar 48000 pipe:1",
                     RedirectStandardOutput = true,
                     UseShellExecute = false,
                     CreateNoWindow = true

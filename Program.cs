@@ -26,7 +26,7 @@ namespace DiscordBot
         {
             try
             {
-                if (DiscordBot.Bot.Token == string.Empty)
+                if (DiscordBot.Settings.Token == string.Empty)
                 {
                     MessageBox.Show("You must enter a token first! (Client -> Options -> Token)", "Invalid Token", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine($"CLIENT ERROR: You must enter a token first! (Client -> Options -> Token)");
@@ -36,7 +36,7 @@ namespace DiscordBot
                 var discordConfig = new DiscordConfiguration()
                 {
                     Intents = DiscordIntents.All,
-                    Token = DiscordBot.Bot.Token,
+                    Token = DiscordBot.Settings.Token,
                     TokenType = TokenType.Bot,
                     AutoReconnect = true,
                     MinimumLogLevel = LogLevel.Critical
@@ -46,7 +46,7 @@ namespace DiscordBot
                 Client.UseVoiceNext();
                 Client.Ready += Client_Ready;
 
-                if (DiscordBot.Bot.Prefix == string.Empty)
+                if (DiscordBot.Settings.Prefix == string.Empty)
                 {
                     MessageBox.Show("You must enter a prefix first! (Client -> Options -> Prefix)", "Invalid Prefix", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Console.WriteLine($"CLIENT ERROR: You must enter a prefix first! (Client -> Options -> Prefix)");
@@ -55,7 +55,7 @@ namespace DiscordBot
 
                 var commandsConfig = new CommandsNextConfiguration()
                 {
-                    StringPrefixes = new string[] { DiscordBot.Bot.Prefix },
+                    StringPrefixes = new string[] { DiscordBot.Settings.Prefix },
                     EnableMentionPrefix = true,
                     EnableDms = true,
                     EnableDefaultHelp = false

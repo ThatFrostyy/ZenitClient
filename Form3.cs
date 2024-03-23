@@ -15,15 +15,15 @@ namespace DiscordBot
         {
             try
             {
-                DiscordBot.Bot.Token = tokenBox.Text;
-                DiscordBot.Bot.Prefix = prefixBox.Text;
-                DiscordBot.Bot.RadioUrl = radioBox.Text;
+                DiscordBot.Settings.Token = tokenBox.Text;
+                DiscordBot.Settings.Prefix = prefixBox.Text;
+                DiscordBot.Settings.RadioUrl = radioBox.Text;
 
                 var clientConfig = new
                 {
-                    Token = DiscordBot.Bot.Token,
-                    Prefix = DiscordBot.Bot.Prefix,
-                    RadioUrl = DiscordBot.Bot.RadioUrl
+                    Token = DiscordBot.Settings.Token,
+                    Prefix = DiscordBot.Settings.Prefix,
+                    RadioUrl = DiscordBot.Settings.RadioUrl
                 };
                 var json = JsonConvert.SerializeObject(clientConfig, Formatting.Indented);
 
@@ -46,9 +46,9 @@ namespace DiscordBot
         {
             try
             {
-                tokenBox.Text = DiscordBot.Bot.Token;
-                prefixBox.Text = DiscordBot.Bot.Prefix;
-                radioBox.Text = DiscordBot.Bot.RadioUrl;
+                tokenBox.Text = DiscordBot.Settings.Token;
+                prefixBox.Text = DiscordBot.Settings.Prefix;
+                radioBox.Text = DiscordBot.Settings.RadioUrl;
             }
             catch (Exception ex)
             {

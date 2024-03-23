@@ -9,9 +9,9 @@ namespace DiscordBot
 {
     public partial class Form1 : Form
     {
-
-        private Form2 _form2;
-        private Form3 _form3;
+        private readonly Form2 _form2;
+        private readonly Form3 _form3;
+        private readonly EmbedDesigner _embedDesigner;
 
         public Form1()
         {
@@ -20,6 +20,7 @@ namespace DiscordBot
 
             _form2 = new Form2(this);
             _form3 = new Form3();
+            _embedDesigner = new EmbedDesigner();
             if (Properties.Settings.Default.DarkMode)
             {
                 _form2.darkMode.Checked = true;
@@ -69,6 +70,16 @@ namespace DiscordBot
         {
             _form3.Show();
             _form3.FillControls();
+        }
+
+        private void commandsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void embedDesignerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            _embedDesigner.Show();
         }
 
         public void SetDark()
@@ -137,9 +148,9 @@ namespace DiscordBot
                 var json = File.ReadAllText("./data/config.json");
                 var discordBotConfig = JsonConvert.DeserializeObject<dynamic>(json);
 
-                DiscordBot.Bot.Token = discordBotConfig.Token;
-                DiscordBot.Bot.Prefix = discordBotConfig.Prefix;
-                DiscordBot.Bot.RadioUrl = discordBotConfig.RadioUrl;
+                DiscordBot.Settings.Token = discordBotConfig.Token;
+                DiscordBot.Settings.Prefix = discordBotConfig.Prefix;
+                DiscordBot.Settings.RadioUrl = discordBotConfig.RadioUrl;
 
                 Console.WriteLine("Config file was successfully loaded.");
             }
